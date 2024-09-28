@@ -16,13 +16,14 @@
  */
 
 import { ProfilePicThumbObj } from './profile-pic-thumb';
+import { Wid } from './wid';
 
 /**
  * Data info of contact
  */
 export interface Contact {
   formattedName: string;
-  id: string;
+  id: Wid;
   isBusiness: boolean;
   isEnterprise: boolean;
   isHighLevelVerified: any;

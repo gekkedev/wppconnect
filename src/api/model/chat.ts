@@ -19,10 +19,9 @@ import { Contact } from './contact';
 import { GroupMetadata } from './group-metadata';
 import { MessageId } from './message-id';
 import { Presence } from './presence';
-import { Wid } from './wid';
 
 export interface Chat {
-  id: Wid;
+  id: string;
   pendingMsgs: boolean;
   lastReceivedKey: MessageId;
   t: number;
