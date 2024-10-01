@@ -34,7 +34,7 @@ export async function sendFile(
     (typeof filename != 'string' && filename != null) ||
     (typeof caption != 'string' && caption != null)
   ) {
-    var text = 'incorrect parameter, insert an string.';
+    var text = 'incorrect parameter, insert a string.';
     return WAPI.scope(chatid, true, null, text);
   }
   var mime = imgBase64.match(/data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/);
@@ -59,7 +59,7 @@ export async function sendFile(
     var result =
       (await media.sendToChat(chat, { caption, quotedMsg, isViewOnce })) || '';
     var m = { type: type, filename: filename, text: caption, mimeType: mime };
-    var to = await WAPI.getchatId(chat.id);
+    var to = await WAPI.get(chat.id);
     if (result === 'success' || result === 'OK') {
       var obj = WAPI.scope(to, false, result, null);
       Object.assign(obj, m);
